@@ -73,7 +73,7 @@ public class ChenzookFontManager {
         }
     }
     
-    class func customitalicSystemFont(ofSize size: CGFloat) -> UIFont {
+    class func customItalicSystemFont(ofSize size: CGFloat) -> UIFont {
         return customFont(name: CFM.fontFamily.oblique, size: size)
     }
     
@@ -100,7 +100,7 @@ fileprivate extension ChenzookFontManager {
         
         Swizzler.exchange(
             classMethod: #selector(UIFont.italicSystemFont(ofSize:)), of: UIFont.self,
-            with: #selector(CFM.customitalicSystemFont(ofSize:)), of: CFM.self
+            with: #selector(CFM.customItalicSystemFont(ofSize:)), of: CFM.self
         )
         
         Swizzler.exchange(instanceMethod: #selector(UIFontDescriptor.init(coder:)), of: UIFont.self, with: #selector(UIFont.init(customCoder:)), of: UIFont.self)
