@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'ChenzookFontManager_Example' do
+  pod 'ChenzookFontManager', :path => '../'
+
+end

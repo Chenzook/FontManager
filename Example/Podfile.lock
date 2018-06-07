@@ -1,0 +1,16 @@
+PODS:
+  - ChenzookFontManager (0.1.0)
+
+DEPENDENCIES:
+  - ChenzookFontManager (from `../`)
+
+EXTERNAL SOURCES:
+  ChenzookFontManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ChenzookFontManager: 8e708e4e3169a32accf9cac86c46aa08209ac90f
+
+PODFILE CHECKSUM: 69f38d29f080bab58c368f12daf13809599f69f3
+
+COCOAPODS: 1.5.3
