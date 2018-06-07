@@ -173,8 +173,31 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iah-Z1-GVj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9UI-P0-UTz">
                                         <rect key="frame" x="0.0" y="424" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9UI-P0-UTz" id="16h-YP-Sfk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmY-Ft-Us6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <state key="normal" title="Show Alert"/>
+                                                    <connections>
+                                                        <action selector="showAlertButtonDidTouch:" destination="il3-tX-thw" eventType="touchUpInside" id="JLh-Lh-Txf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nmY-Ft-Us6" firstAttribute="top" secondItem="16h-YP-Sfk" secondAttribute="top" id="AYI-We-pFN"/>
+                                                <constraint firstAttribute="trailing" secondItem="nmY-Ft-Us6" secondAttribute="trailing" id="EMY-YC-ilJ"/>
+                                                <constraint firstItem="nmY-Ft-Us6" firstAttribute="leading" secondItem="16h-YP-Sfk" secondAttribute="leading" id="fWp-SS-NZG"/>
+                                                <constraint firstAttribute="bottom" secondItem="nmY-Ft-Us6" secondAttribute="bottom" id="gN1-h4-Mcb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iah-Z1-GVj">
+                                        <rect key="frame" x="0.0" y="468" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iah-Z1-GVj" id="Tsr-nk-3iv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -182,7 +205,10 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-oX-DUo">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Show Action sheet"/>
+                                                    <connections>
+                                                        <action selector="showActionSheetButtonDidTouch:" destination="il3-tX-thw" eventType="touchUpInside" id="0nJ-Zc-l0c"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -194,7 +220,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="Lrc-pG-bBc">
-                                        <rect key="frame" x="0.0" y="468" width="375" height="108"/>
+                                        <rect key="frame" x="0.0" y="512" width="375" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lrc-pG-bBc" id="RyU-xg-iGg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
@@ -220,14 +246,14 @@
                             <tableViewSection headerTitle="Custom font (not overrided)" id="y2w-wc-6gm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="rfd-Ru-LTU" style="IBUITableViewCellStyleDefault" id="EKf-1d-r6w">
-                                        <rect key="frame" x="0.0" y="604" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="648" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EKf-1d-r6w" id="bRu-do-Ank">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Not a system font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rfd-Ru-LTU">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
                                                     <nil key="textColor"/>
@@ -241,7 +267,7 @@
                             <tableViewSection headerTitle="Coded fonts" id="ZGX-zK-XTL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="v98-kr-8lI" style="IBUITableViewCellStyleDefault" id="aMz-Hl-gRS">
-                                        <rect key="frame" x="0.0" y="676" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="720" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMz-Hl-gRS" id="9a7-Z3-5Qc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
