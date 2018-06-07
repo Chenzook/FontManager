@@ -8,7 +8,7 @@
 //  License: MIT License
 //
 
-import UIKit
+import UIKit.UIFont
 
 /// Shortname
 public typealias CFM = ChenzookFontManager
