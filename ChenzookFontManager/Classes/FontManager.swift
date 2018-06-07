@@ -32,7 +32,7 @@ public class ChenzookFontManager {
         overrideSystemFont(fontFamily: FontFamily(regular: fontName), increasedBy: offset)
     }
     
-    fileprivate class func customFont(name: String, size: CGFloat) -> UIFont {
+    private class func customFont(name: String, size: CGFloat) -> UIFont {
         let sizeWithOffset = size + offset
         guard let font = UIFont(name: name, size: sizeWithOffset) else {
             UIFont.familyNames.forEach({ familyName in
@@ -79,7 +79,7 @@ public class ChenzookFontManager {
     
 }
 
-fileprivate extension ChenzookFontManager {
+private extension ChenzookFontManager {
     
     class func exchangeOriginalUIFontMethodsWithCustomMethods() {
         
