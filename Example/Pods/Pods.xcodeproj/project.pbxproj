@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2AA0877B20C8EB4F002F082F /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0877920C8EB4F002F082F /* FontManager.swift */; };
 		2AA0877C20C8EB4F002F082F /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0877A20C8EB4F002F082F /* FontFamily.swift */; };
+		2AA087A520C95EA2002F082F /* Swizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA087A420C95EA2002F082F /* Swizzler.swift */; };
 		2C19DB3C84DDB1770DF2859AB7AC6B2D /* Pods-ChenzookFontManager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 789C7C3709AD7DCBF15CDDE4693C2AF1 /* Pods-ChenzookFontManager_Tests-dummy.m */; };
 		39F0DA2077AAAFE436C9F477EE53881F /* Pods-ChenzookFontManager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1062D8DEF469394EB1B57EFC62122703 /* Pods-ChenzookFontManager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4386408B8C870571B368D82D71E1C815 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -47,6 +48,7 @@
 		2A97E6E127485D7187E47D2A0C36EA59 /* Pods-ChenzookFontManager_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ChenzookFontManager_Example-resources.sh"; sourceTree = "<group>"; };
 		2AA0877920C8EB4F002F082F /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontManager.swift; path = ChenzookFontManager/Classes/FontManager.swift; sourceTree = "<group>"; };
 		2AA0877A20C8EB4F002F082F /* FontFamily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontFamily.swift; path = ChenzookFontManager/Classes/FontFamily.swift; sourceTree = "<group>"; };
+		2AA087A420C95EA2002F082F /* Swizzler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Swizzler.swift; path = ChenzookFontManager/Classes/Swizzler.swift; sourceTree = "<group>"; };
 		378B3B15AC8FF501F135DF6FB94B612C /* Pods-ChenzookFontManager_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ChenzookFontManager_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3A0D33BFE5FFB17521DA775ED1A87198 /* Pods-ChenzookFontManager_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ChenzookFontManager_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		61E2BAE474B725190C948131BFC2651F /* ChenzookFontManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChenzookFontManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 			children = (
 				2AA0877A20C8EB4F002F082F /* FontFamily.swift */,
 				2AA0877920C8EB4F002F082F /* FontManager.swift */,
+				2AA087A420C95EA2002F082F /* Swizzler.swift */,
 				EC871B353CFDFECE552892F2022512C2 /* Pod */,
 				13D0E9F183B8AFB717655CE7F0CF03DB /* Support Files */,
 			);
@@ -365,6 +368,7 @@
 				2AA0877C20C8EB4F002F082F /* FontFamily.swift in Sources */,
 				6086B957BFC8EEF74A355A08C13B7FBD /* ChenzookFontManager-dummy.m in Sources */,
 				2AA0877B20C8EB4F002F082F /* FontManager.swift in Sources */,
+				2AA087A520C95EA2002F082F /* Swizzler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +543,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ChenzookFontManager/ChenzookFontManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ChenzookFontManager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ChenzookFontManager/ChenzookFontManager.modulemap";
 				PRODUCT_MODULE_NAME = ChenzookFontManager;
@@ -693,7 +697,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ChenzookFontManager/ChenzookFontManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ChenzookFontManager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ChenzookFontManager/ChenzookFontManager.modulemap";
 				PRODUCT_MODULE_NAME = ChenzookFontManager;

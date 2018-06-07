@@ -25,7 +25,7 @@ public class ChenzookFontManager {
     public static func overrideSystemFont(fontFamily: FontFamily, increasedBy offset: CGFloat = 0) {
         self.fontFamily = fontFamily
         self.offset = offset
-        UIFont.exchangeMethods()
+        exchangeOriginalUIFontMethodsWithCustomMethods()
     }
     
     public static func overrideSystemFont(fontName: String, increasedBy offset: CGFloat = 0) {
@@ -46,56 +46,55 @@ public class ChenzookFontManager {
     }
 }
 
-@objc private extension UIFont {
+@objc private extension ChenzookFontManager {
     
     class func customSystemFont(ofSize size: CGFloat) -> UIFont {
-        return CFM.customFont(name: CFM.fontFamily.regular, size: size)
+        return customFont(name: CFM.fontFamily.regular, size: size)
     }
     
     class func customBoldSystemFont(ofSize size: CGFloat) -> UIFont {
-        return CFM.customFont(name: CFM.fontFamily.bold, size: size)
+        return customFont(name: CFM.fontFamily.bold, size: size)
+    }
+    
+    class func customSystemFont(ofSize size: CGFloat, weight: UIFont.Weight) -> UIFont {
+        switch weight {
+            
+        case .ultraLight: return customFont(name: CFM.fontFamily.ultraLight, size: size)
+        case .thin:       return customFont(name: CFM.fontFamily.thin,       size: size)
+        case .light:      return customFont(name: CFM.fontFamily.light,      size: size)
+        case .regular:    return customFont(name: CFM.fontFamily.regular,    size: size)
+        case .medium:     return customFont(name: CFM.fontFamily.medium,     size: size)
+        case .semibold:   return customFont(name: CFM.fontFamily.semibold,   size: size)
+        case .bold:       return customFont(name: CFM.fontFamily.bold,       size: size)
+        case .heavy:      return customFont(name: CFM.fontFamily.heavy,      size: size)
+        case .black:      return customFont(name: CFM.fontFamily.black,      size: size)
+            
+        default:          return customFont(name: CFM.fontFamily.regular,    size: size)
+        }
     }
     
 }
 
-fileprivate extension UIFont {
+fileprivate extension ChenzookFontManager {
     
-    class func exchangeMethods() {
+    class func exchangeOriginalUIFontMethodsWithCustomMethods() {
         
-        exchange(classMethod: #selector(systemFont(ofSize:)),
-                 with: #selector(customSystemFont(ofSize:)))
+        Swizzler.exchange(
+            classMethod: #selector(UIFont.systemFont(ofSize:)), of: UIFont.self,
+            with: #selector(CFM.customSystemFont(ofSize:)), of: CFM.self
+        )
         
-        exchange(classMethod: #selector(boldSystemFont(ofSize:)),
-                 with: #selector(customBoldSystemFont(ofSize:)))
+        Swizzler.exchange(
+            classMethod: #selector(UIFont.boldSystemFont(ofSize:)), of: UIFont.self,
+            with: #selector(CFM.customBoldSystemFont(ofSize:)), of: CFM.self
+        )
         
-        exchange(instanceMethod: #selector(UIFontDescriptor.init(coder:)),
-                 with: #selector(UIFont.init(customCoder:)))
-    }
-    
-    private class func exchange(classMethod orginalMethod: Selector, with customMethod: Selector) {
+        Swizzler.exchange(
+            classMethod: #selector(UIFont.systemFont(ofSize:weight:)), of: UIFont.self,
+            with: #selector(CFM.customSystemFont(ofSize:weight:)), of: CFM.self
+        )
         
-        guard let systemFontMethod = class_getClassMethod(self, orginalMethod) else {
-            return assertionFailure("Can't change system font")
-        }
-        
-        guard let customSystemFontMethod = class_getClassMethod(self, customMethod) else {
-            return assertionFailure("Can't change system font")
-        }
-        
-        method_exchangeImplementations(systemFontMethod, customSystemFontMethod)
-    }
-    
-    private class func exchange(instanceMethod orginalMethod: Selector, with customeMethod: Selector) {
-        
-        guard let systemFontMethod = class_getInstanceMethod(self, orginalMethod) else {
-            return assertionFailure("Can't change system font")
-        }
-        
-        guard let customSystemFontMethod = class_getInstanceMethod(self, customeMethod) else {
-            return assertionFailure("Can't change system font")
-        }
-        
-        method_exchangeImplementations(systemFontMethod, customSystemFontMethod)
+        Swizzler.exchange(instanceMethod: #selector(UIFontDescriptor.init(coder:)), of: UIFont.self, with: #selector(UIFont.init(customCoder:)), of: UIFont.self)
     }
     
 }
@@ -122,7 +121,7 @@ private extension UIFont {
             case "CTFontRegularUsage":    return fontFamily.regular
             case "CTFontMediumUsage":     return fontFamily.medium
             case "CTFontDemiUsage":       return fontFamily.semibold
-            case "CTFontEmphasizedUsage": return fontFamily.bold
+            case "CTFontEmphasizedUsage": return fontFamily.emphasized
             case "CTFontBoldUsage":       return fontFamily.bold
             case "CTFontHeavyUsage":      return fontFamily.heavy
             case "CTFontBlackUsage":      return fontFamily.black
@@ -132,6 +131,7 @@ private extension UIFont {
                 return fontFamily.regular
             }
         }
+        
         self.init(name: fontName, size: fontDescriptor.pointSize + CFM.offset)!
     }
 }
