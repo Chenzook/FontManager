@@ -16,6 +16,7 @@ public class FontFamily {
                 guard fontName.lowercased() != regularName.lowercased() + "-" + usage.lowercased() else { return fontName }
                 guard fontName.lowercased() != regularName.lowercased() + "_" + usage.lowercased() else { return fontName }
                 guard fontName.lowercased() != regularName.lowercased() + " " + usage.lowercased() else { return fontName }
+                guard fontName.lowercased() != regularName.lowercased() + usage.lowercased() else { return fontName }
             }
         }
         return nil
