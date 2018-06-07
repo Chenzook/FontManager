@@ -52,6 +52,10 @@ public class FontFamily {
         return mostSimilarFontName(regularName: regular, usage: "bold") ?? semibold // ?? medium ?? regular
     }()
     
+    internal lazy var emphasized: String = {
+        return mostSimilarFontName(regularName: regular, usage: "emphasized") ?? bold // ?? medium ?? regular
+    }()
+    
     internal lazy var heavy: String = {
         return mostSimilarFontName(regularName: regular, usage: "heavy") ?? bold // ?? semibold ?? medium ?? regular
     }()
@@ -68,6 +72,7 @@ public class FontFamily {
                 medium: String? = nil,
                 semibold: String? = nil,
                 bold: String? = nil,
+                emphasized: String? = nil,
                 heavy: String? = nil,
                 black: String? = nil) {
         
@@ -80,6 +85,7 @@ public class FontFamily {
         if let medium     = medium     { self.medium = medium }
         if let semibold   = semibold   { self.semibold = semibold }
         if let bold       = bold       { self.bold = bold }
+        if let emphasized = emphasized { self.emphasized = emphasized }
         if let heavy      = heavy      { self.heavy = heavy }
         if let black      = black      { self.black = black }
         
