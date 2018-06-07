@@ -123,24 +123,26 @@ private extension UIFont {
             return CFM.fontFamily
         }
         var fontName: String {
-            switch fontUIUsageAttribute {
-            case "CTFontUltraLightUsage": return fontFamily.ultraLight
-            case "CTFontThinUsage":       return fontFamily.thin
-            case "CTFontLightUsage":      return fontFamily.light
-            case "CTFontRegularUsage":    return fontFamily.regular
-            case "CTFontMediumUsage":     return fontFamily.medium
-            case "CTFontDemiUsage":       return fontFamily.semibold
-            case "CTFontEmphasizedUsage": return fontFamily.emphasized
-            case "CTFontBoldUsage":       return fontFamily.bold
-            case "CTFontHeavyUsage":      return fontFamily.heavy
-            case "CTFontBlackUsage":      return fontFamily.black
-            case "CTFontObliqueUsage":    return fontFamily.oblique
-            default:
-                assertionFailure("Unhandled font attribute: \(fontUIUsageAttribute)")
+            
+            guard let fontDescriptorUsage = UIFontDescriptorUsage(rawValue: fontUIUsageAttribute) else {
                 return fontFamily.regular
             }
+            
+            switch fontDescriptorUsage {
+            case .ultraLight: return fontFamily.ultraLight
+            case .thin:       return fontFamily.thin
+            case .light:      return fontFamily.light
+            case .regular:    return fontFamily.regular
+            case .oblique:    return fontFamily.oblique
+            case .medium:     return fontFamily.medium
+            case .demi:       return fontFamily.semibold
+            case .emphasized: return fontFamily.emphasized
+            case .bold:       return fontFamily.bold
+            case .heavy:      return fontFamily.heavy
+            case .black:      return fontFamily.black
+            }
         }
-        
+
         self.init(name: fontName, size: fontDescriptor.pointSize + CFM.offset)!
     }
 }
