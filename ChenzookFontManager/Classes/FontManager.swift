@@ -115,16 +115,19 @@ private extension UIFont {
             return
         }
         
-        guard let fontUIUsageAttribute = fontDescriptor.fontAttributes[.init(rawValue: "NSCTFontUIUsageAttribute")] as? String else {
+        guard let fontUIUsageAttribute = fontDescriptor.fontAttributes[.usage] as? String else {
             self.init(customCoder: aDecoder)
             return
         }
+
         var fontFamily: FontFamily {
             return CFM.fontFamily
         }
+
         var fontName: String {
             
             guard let fontDescriptorUsage = UIFontDescriptorUsage(rawValue: fontUIUsageAttribute) else {
+                print("Undefined usage attribute: \(fontUIUsageAttribute)")
                 return fontFamily.regular
             }
             

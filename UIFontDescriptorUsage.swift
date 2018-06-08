@@ -10,7 +10,7 @@
 
 import Foundation
 
-enum UIFontDescriptorUsage: String {
+public enum UIFontDescriptorUsage: String {
     
     case ultraLight = "CTFontUltraLightUsage"
     case thin       = "CTFontThinUsage"
@@ -24,4 +24,8 @@ enum UIFontDescriptorUsage: String {
     case heavy      = "CTFontHeavyUsage"
     case black      = "CTFontBlackUsage"
     
+}
+
+public extension UIFontDescriptor.AttributeName {
+    static let usage = UIFontDescriptor.AttributeName("NSCTFontUIUsageAttribute")
 }
