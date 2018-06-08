@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ChenzookFontManager_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ChenzookFontManager_TestsVersionString[];
+FOUNDATION_EXPORT double ChenzookSwizzlerVersionNumber;
+FOUNDATION_EXPORT const unsigned char ChenzookSwizzlerVersionString[];
 

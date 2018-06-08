@@ -1,16 +1,23 @@
 PODS:
-  - ChenzookFontManager (0.1.0)
+  - ChenzookFontManager (0.3.0):
+    - ChenzookSwizzler
+  - ChenzookSwizzler (1.0)
 
 DEPENDENCIES:
   - ChenzookFontManager (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ChenzookSwizzler
 
 EXTERNAL SOURCES:
   ChenzookFontManager:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ChenzookFontManager: 8e708e4e3169a32accf9cac86c46aa08209ac90f
+  ChenzookFontManager: 5fe97529093a8af75888a963d7cbd53da68698aa
+  ChenzookSwizzler: 306858c697e1af0cf9324383cc574f4e2567564c
 
-PODFILE CHECKSUM: 69f38d29f080bab58c368f12daf13809599f69f3
+PODFILE CHECKSUM: d35fc88f087abd843ef47f7709d4bb0117db48b1
 
 COCOAPODS: 1.5.3

@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/Chenzook/FontManager.git', :tag => s.version.to_s }
     s.social_media_url = 'https://linkedin.com/in/MojtabaHosseini'
     
-    s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '8.2'
     s.swift_version = '4.1'
     
     s.source_files = 'ChenzookFontManager/Classes/**/*'
@@ -39,5 +39,5 @@ Pod::Spec.new do |s|
     
     # s.public_header_files = 'Pod/Classes/**/*.h'
     # s.frameworks = 'UIKit', 'MapKit'
-    # s.dependency 'AFNetworking', '~> 2.3'
+    s.dependency 'ChenzookSwizzler'
 end

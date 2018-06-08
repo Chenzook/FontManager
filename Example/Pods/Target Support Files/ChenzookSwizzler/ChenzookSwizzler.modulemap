@@ -1,0 +1,6 @@
+framework module ChenzookSwizzler {
+  umbrella header "ChenzookSwizzler-umbrella.h"
+
+  export *
+  module * { export * }
+}

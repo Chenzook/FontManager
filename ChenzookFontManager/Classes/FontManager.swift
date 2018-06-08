@@ -9,6 +9,7 @@
 //
 
 import UIKit.UIFont
+import ChenzookSwizzler
 
 /// Shortname
 public typealias CFM = ChenzookFontManager
@@ -83,27 +84,27 @@ private extension ChenzookFontManager {
     
     class func exchangeOriginalUIFontMethodsWithCustomMethods() {
         
-        Swizzler.exchange(
+        ChenzookSwizzler.exchange(
             classMethod: #selector(UIFont.systemFont(ofSize:)), of: UIFont.self,
             with: #selector(CFM.customSystemFont(ofSize:)), of: CFM.self
         )
         
-        Swizzler.exchange(
+        ChenzookSwizzler.exchange(
             classMethod: #selector(UIFont.boldSystemFont(ofSize:)), of: UIFont.self,
             with: #selector(CFM.customBoldSystemFont(ofSize:)), of: CFM.self
         )
         
-        Swizzler.exchange(
+        ChenzookSwizzler.exchange(
             classMethod: #selector(UIFont.systemFont(ofSize:weight:)), of: UIFont.self,
             with: #selector(CFM.customSystemFont(ofSize:weight:)), of: CFM.self
         )
         
-        Swizzler.exchange(
+        ChenzookSwizzler.exchange(
             classMethod: #selector(UIFont.italicSystemFont(ofSize:)), of: UIFont.self,
             with: #selector(CFM.customItalicSystemFont(ofSize:)), of: CFM.self
         )
         
-        Swizzler.exchange(instanceMethod: #selector(UIFontDescriptor.init(coder:)), of: UIFont.self, with: #selector(UIFont.init(customCoder:)), of: UIFont.self)
+        ChenzookSwizzler.exchange(instanceMethod: #selector(UIFontDescriptor.init(coder:)), of: UIFont.self, with: #selector(UIFont.init(customCoder:)), of: UIFont.self)
     }
     
 }
@@ -127,7 +128,7 @@ private extension UIFont {
         var fontName: String {
             
             guard let fontDescriptorUsage = UIFontDescriptorUsage(rawValue: fontUIUsageAttribute) else {
-                print("Undefined usage attribute: \(fontUIUsageAttribute)")
+                print("WARNING| Undefined usage attribute: \(fontUIUsageAttribute)")
                 return fontFamily.regular
             }
             

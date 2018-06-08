@@ -213,10 +213,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChenzookFontManager_Example/Pods-ChenzookFontManager_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChenzookFontManager/ChenzookFontManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ChenzookSwizzler/ChenzookSwizzler.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChenzookFontManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChenzookSwizzler.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

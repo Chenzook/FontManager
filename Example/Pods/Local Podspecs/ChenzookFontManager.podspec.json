@@ -1,22 +1,26 @@
 {
   "name": "ChenzookFontManager",
-  "version": "0.1.0",
-  "summary": "A short description of ChenzookFontManager.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/MojtabaHs/ChenzookFontManager",
-  "license": {
-    "type": "MIT",
-    "file": "LICENSE"
-  },
+  "version": "0.3.0",
+  "summary": "Overriding entire application font by just single line of code",
+  "description": "With Chenzook Font Manager (by Seyed Mojtaba Hosseini Zeidabadi), you can specify a custom font for each system support font traits from ultraLight to Black (+ Oblique).",
+  "homepage": "https://github.com/Chenzook/FontManager",
+  "license": "MIT",
   "authors": {
     "MojtabaHs": "hosseini@chenzook.com"
   },
   "source": {
-    "git": "https://github.com/MojtabaHs/ChenzookFontManager.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Chenzook/FontManager.git",
+    "tag": "0.3.0"
   },
+  "social_media_url": "https://linkedin.com/in/MojtabaHosseini",
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.2"
   },
-  "source_files": "ChenzookFontManager/Classes/**/*"
+  "swift_version": "4.1",
+  "source_files": "ChenzookFontManager/Classes/**/*",
+  "dependencies": {
+    "ChenzookSwizzler": [
+
+    ]
+  }
 }

@@ -10,29 +10,31 @@
 
 import Foundation
 
-public class Swizzler {
+public typealias CS = ChenzookSwizzler
+
+public class ChenzookSwizzler {
     
-    class func exchange(classMethod orginalMethod: Selector, of originalClass: AnyClass?, with customMethod: Selector, of customClass: AnyClass?) {
+    public class func exchange(classMethod orginalMethod: Selector, of originalClass: AnyClass?, with customMethod: Selector, of customClass: AnyClass?) {
         
         guard let originalMethod = class_getClassMethod(originalClass, orginalMethod) else {
-            return assertionFailure("Can't change system font")
+            return assertionFailure("Original class method not found")
         }
         
         guard let customMethod = class_getClassMethod(customClass, customMethod) else {
-            return assertionFailure("Can't change system font")
+            return assertionFailure("Custom class method not found")
         }
         
         method_exchangeImplementations(originalMethod, customMethod)
     }
     
-    class func exchange(instanceMethod orginalMethod: Selector, of originalClass: AnyClass?, with customMethod: Selector, of customClass: AnyClass?) {
+     public class func exchange(instanceMethod orginalMethod: Selector, of originalClass: AnyClass?, with customMethod: Selector, of customClass: AnyClass?) {
 
         guard let originalMethod = class_getInstanceMethod(originalClass, orginalMethod) else {
-            return assertionFailure("Can't change system font")
+            return assertionFailure("Original instance method not found")
         }
         
         guard let customMethod = class_getInstanceMethod(customClass, customMethod) else {
-            return assertionFailure("Can't change system font")
+            return assertionFailure("Custom instance method not found")
         }
         
         method_exchangeImplementations(originalMethod, customMethod)
