@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     #   * Finally, don't worry about the indent, CocoaPods strips it!
     
     s.description      = <<-DESC
-    With chenzook font manager (by Seyed Mojtaba Hosseini Zeidabadi), you can specify a custom font for each system support font traits from ultraLight to Black (+ Oblique).
+    With Chenzook Font Manager (by Seyed Mojtaba Hosseini Zeidabadi), you can specify a custom font for each system support font traits from ultraLight to Black (+ Oblique).
     DESC
     
     s.homepage         = 'https://github.com/Chenzook/FontManager'
